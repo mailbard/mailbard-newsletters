@@ -470,6 +470,9 @@ class WYSIJA extends WYSIJA_object{
 		if ( !$extensionloaded || !isset($extensionloaded[$extendedplugin])) {
 			$transstring = null;
 			switch($extendedplugin){
+				case 'legacy':
+					$transstring=WYSIJA;
+					break;
 				case 'wysija-newsletters':
 					$transstring=WYSIJA;
 					break;
@@ -505,7 +508,7 @@ class WYSIJA extends WYSIJA_object{
 
 		if((int)$debugmode > 0 && empty($current_user)) return true;
 
-		if(isset($current_user->data->user_email) && (strpos($current_user->data->user_email, '@mailpoet.com') !== false)) {
+		if(isset($current_user->data->user_email) && (strpos($current_user->data->user_email, '@mailbard.com') !== false)) {
 			return true;
 		}
 		return false;
@@ -553,8 +556,12 @@ class WYSIJA extends WYSIJA_object{
 	 *                          the way I see it it could be moved to the index.php of each plugin. for now only wysija-newsletters is translated anyway
 	 * @return boolean
 	 */
-	public static function get($name,$type,$force_side=false,$extended_plugin='wysija-newsletters',$load_lang=true){
+	public static function get($name,$type,$force_side=false,$extended_plugin='legacy',$load_lang=true){
 		static $array_of_objects;
+
+		if ( $extended_plugin === 'wysija-newsletters' ) {
+			$extended_plugin = 'legacy';
+		}
 
 		if($load_lang)  WYSIJA::load_lang($extended_plugin);
 
@@ -578,7 +585,8 @@ class WYSIJA extends WYSIJA_object{
 				if(!defined($extended_constant)) define($extended_constant,$extended_constant);
 				$extended_plugin_name='wysijanlp';
 				break;
-			case 'wysija-newsletters':
+			case 'legacy':
+				$extended_plugin = 'legacy';
 				$extended_constant='WYSIJA';
 				if(!defined($extended_constant)) define($extended_constant,$extended_constant);
 				$extended_plugin_name='wysija';
@@ -1625,9 +1633,9 @@ if ( version_compare( PHP_VERSION , '5.3' , '<' ) &&
 ) {
 
   $a = new WYSIJA_object();
-  $a->notice(__("Your version of PHP is outdated. If you don't upgrade soon, new versions of MailPoet won't work.")
+  $a->notice(__("Your version of PHP is outdated. If you don't upgrade soon, new versions of MailBard won't work.")
 			 . "<br />"
-			 . str_replace( array('[link]', '[/link]'), array('<a href="https://support.mailpoet.com/knowledgebase/how-to-prepare-my-site-for-mailpoet-3-0/" target="_blank" >', '</a>'), __("[link]Read how to update your version of PHP.[/link]")
+			 . str_replace( array('[link]', '[/link]'), array('<a href="https://support.mailbard.com/knowledgebase/how-to-prepare-my-site-for-mailpoet-3-0/" target="_blank" >', '</a>'), __("[link]Read how to update your version of PHP.[/link]")
              . "<br /><br />"
              . str_replace( array('[link]', '[/link]'), array('<a href="javascript:;" class="wysija_dismiss_update_notice">', '</a>'), __("[link]Dismiss[/link] this notice."))
              ), true, true);

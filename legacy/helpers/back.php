@@ -345,18 +345,18 @@ class WYSIJA_help_back extends WYSIJA_help{
         $config = WYSIJA::get('config','model');
         $linkcontent = __("It doesn't always work the way we want it to, doesn't it? We have a [link]dedicated support website[/link] with documentation and a ticketing system.",WYSIJA);
         $finds = array('[link]','[/link]');
-        $replace = array('<a target="_blank" href="http://support.mailpoet.com" title="support.mailpoet.com">','</a>');
+        $replace = array('<a target="_blank" href="http://support.mailbard.com" title="support.mailbard.com">','</a>');
         $truelinkhelp = '<p>'.str_replace($finds,$replace,$linkcontent).'</p>';
-        $truelinkhelp .= '<p>'.__('MailPoet Version: ',WYSIJA).'<strong>'.WYSIJA::get_version().'</strong></p>';
+        $truelinkhelp .= '<p>'.__('MailBard Version: ',WYSIJA).'<strong>'.WYSIJA::get_version().'</strong></p>';
 
-        $red_dot = is_plugin_active('mailpoet/mailpoet.php') ? '2' : '<span class="update-plugins"><span class="update-count">1</span></span>';
+        //$red_dot = is_plugin_active('mailpoet/mailpoet.php') ? '2' : '<span class="update-plugins"><span class="update-count">1</span></span>';
+		$red_dot = '';
 
         $this->menus=array(
-            'campaigns'=>array('title'=>'MailPoet '. $red_dot),
+            'campaigns'=>array('title'=>'MailBard '. $red_dot),
             'subscribers'=>array('title'=>__('Subscribers',WYSIJA)), // if the key "subscribers" is changed, please change in the filter "wysija_menus" as well.
             'config'=>array('title'=>__('Settings',WYSIJA)),
             'premium'=>array('title'=>__('Premium',WYSIJA)),
-            'mp3'=>array('title'=>__('Try MailPoet 3 Now!',WYSIJA))
         );
         $this->menus = apply_filters('wysija_menus', $this->menus);
         $this->menuHelp = $truelinkhelp;
@@ -364,7 +364,7 @@ class WYSIJA_help_back extends WYSIJA_help{
             $msg=$config->getValue('ignore_msgs');
             if(!isset($msg['queuesendsslow'])){
                 $this->notice(
-                        __('Tired of waiting more than 48h to send your emails?',WYSIJA).' '. str_replace(array('[link]','[/link]'), array('<a href="http://docs.mailpoet.com/article/48-wp-cron-batch-emails-sending-frequency" target="_blank">','</a>'), __('[link]Find out[/link] how you can improve this.',WYSIJA)).
+                        __('Tired of waiting more than 48h to send your emails?',WYSIJA).' '. str_replace(array('[link]','[/link]'), array('<a href="http://docs.mailbard.com/article/48-wp-cron-batch-emails-sending-frequency" target="_blank">','</a>'), __('[link]Find out[/link] how you can improve this.',WYSIJA)).
                         ' <a class="linkignore queuesendsslow" href="javascript:;">'.__('Hide!',WYSIJA).'</a>');
             }
         }

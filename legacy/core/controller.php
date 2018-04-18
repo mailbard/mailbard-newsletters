@@ -11,7 +11,7 @@ class WYSIJA_control extends WYSIJA_object{
 	var $filters=array();
 	var $js=array();
 	var $jsLoc=array();
-	var $extension="wysija-newsletters";
+	var $extension="legacy";
 	var $joins=array();
 	var $title="";
 

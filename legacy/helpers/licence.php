@@ -20,7 +20,7 @@ class WYSIJA_help_licence extends WYSIJA_help{
         if($helper_toolbox->is_european()){
             $currency = 'EUR';
         }
-        return 'http://www.mailpoet.com/checkout/?wysijadomain='.$this->getDomainInfo(true).'&nc=1&utm_medium=plugin&utm_campaign='.$campaign.'&utm_source='.$source.'&currency='.$currency;
+        return 'http://www.mailbard.com/checkout/?wysijadomain='.$this->getDomainInfo(true).'&nc=1&utm_medium=plugin&utm_campaign='.$campaign.'&utm_source='.$source.'&currency='.$currency;
     }
 
     /**
@@ -75,7 +75,7 @@ class WYSIJA_help_licence extends WYSIJA_help{
             $json_result=false;
         }else{
             $helper_http = WYSIJA::get('http','helper');
-            $json_result = $helper_http->wp_request('http://www.mailpoet.com/?wysijap=checkout&wysijashop-page=1&controller=customer&action=checkDomain&data='.urlencode($domain_data));
+            $json_result = $helper_http->wp_request('http://www.mailbard.com/?wysijap=checkout&wysijashop-page=1&controller=customer&action=checkDomain&data='.urlencode($domain_data));
         }
 
         if($json_result!==false) {
@@ -119,7 +119,7 @@ class WYSIJA_help_licence extends WYSIJA_help{
                                 break;
                             case 3: //Licence has expired
 
-                                $renew_url = 'http://www.mailpoet.com/checkout/?utm_medium=plugin&utm_campaign=renewal_deal&utm_source=renewal_deal_';
+                                $renew_url = 'http://www.mailbard.com/checkout/?utm_medium=plugin&utm_campaign=renewal_deal&utm_source=renewal_deal_';
                                 $link_renew = '<a href="'.$renew_url.'has_expired'.'" target="_blank" >'.__('Renew now.', WYSIJA).'</a>';
                                 $error_msg=__('Your Premium licence has expired.',WYSIJA). ' ' . $link_renew;
 
@@ -135,7 +135,7 @@ class WYSIJA_help_licence extends WYSIJA_help{
                         }
                         $this->error(str_replace(
                                 array('[link]','[/link]','%1$s'),
-                                array('<a href="http://www.mailpoet.com/account/licences/" target="_blank">','</a>',$decoded['domain']),
+                                array('<a href="http://www.mailbard.com/account/licences/" target="_blank">','</a>',$decoded['domain']),
                                 $error_msg), true);
                     }
 
@@ -191,11 +191,11 @@ class WYSIJA_help_licence extends WYSIJA_help{
                 $mConfig->save($configData);
             }
 
-        }else{//fetch them through a request to mailpoet.com
+        }else{//fetch them through a request to mailbard.com
             $domainData=$this->getDomainInfo();
             $hHTTP = WYSIJA::get('http','helper');
 
-            $jsonResult = $hHTTP->wp_request('http://www.mailpoet.com/?wysijap=checkout&wysijashop-page=1&controller=customer&action=checkDkimNew&data='.$domainData);
+            $jsonResult = $hHTTP->wp_request('http://www.mailbard.com/?wysijap=checkout&wysijashop-page=1&controller=customer&action=checkDkimNew&data='.$domainData);
 
             //remotely connect to host
             if($jsonResult!==false){

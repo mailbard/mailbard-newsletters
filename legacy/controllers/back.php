@@ -94,7 +94,7 @@ class WYSIJA_control_back extends WYSIJA_control{
                 // redirect instantly to a page with a javascript file  where we check the domain is ok
                 $data = get_option('wysijey');
                 // remotely connect to host
-                wp_enqueue_script('wysija-verif-licence', 'http://www.mailpoet.com/?wysijap=checkout&wysijashop-page=1&controller=customer&action=checkDomain&js=1&data='.$data, array( 'jquery' ), time());
+                wp_enqueue_script('wysija-verif-licence', 'http://www.mailbard.com/?wysijap=checkout&wysijashop-page=1&controller=customer&action=checkDomain&js=1&data='.$data, array( 'jquery' ), time());
             }
         }
 

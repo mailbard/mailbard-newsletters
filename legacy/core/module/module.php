@@ -36,7 +36,7 @@ class WYSIJA_module extends WYSIJA_control{
 	 */
 	protected $data;
 
-	protected $extended_plugin='wysija-newsletters';
+	protected $extended_plugin='legacy';
 
 
 
@@ -131,7 +131,7 @@ class WYSIJA_module extends WYSIJA_control{
 	 * @param array $params (key => value, key => value)
 	 * @return type
 	 */
-	public static function get_module_link($module_name, $hook_name, $extended_plugin='wysija-newsletters', Array $params = array()) {
+	public static function get_module_link($module_name, $hook_name, $extended_plugin='legacy', Array $params = array()) {
 		$model_config=WYSIJA::get('config','model');
 		$params = array_merge($params, array(
 			'wysija-page' => 1,
@@ -180,7 +180,7 @@ class WYSIJA_module extends WYSIJA_control{
 	 * Solution 1: cache by using a static attribute, within this class
 	 * Solution 2: populate data to an external file (xml), and load that file into this static attribute (with solution 1)
 	 */
-	public static function execute_hook($hook_name, $params, $extended_plugin='wysija-newsletters'){
+	public static function execute_hook($hook_name, $params, $extended_plugin='legacy'){
 		$hook_output = '';
 		if (!empty(self::$hooks[$hook_name])){
 			foreach (self::$hooks[$hook_name] as $module_name){
@@ -199,7 +199,7 @@ class WYSIJA_module extends WYSIJA_control{
 	 *                              -core/controller.php line 21, 23 ,24
 	 * @return an instance of WYSIJA_module or its derived classes
 	 */
-	public static function get_instance_by_name($module_name,$extended_plugin='wysija-newsletters'){
+	public static function get_instance_by_name($module_name,$extended_plugin='legacy'){
 		return WYSIJA::get($module_name,'module',false, $extended_plugin);
 	}
 

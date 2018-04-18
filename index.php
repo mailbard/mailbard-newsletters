@@ -31,18 +31,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Not allowed' );
 }
 
-if ( class_exists( 'WYSIJA_object' ) ) {
-	// throw warning
-	add_action( 'admin_notices', 'mailbard_wysija_warning' );
-} else {
-	// load
-	require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'legacy'.DIRECTORY_SEPARATOR.'index.php');
+add_action( 'plugins_loaded', 'mailbard_loader' );
+
+function mailbard_loader() {
+	if ( defined( 'WYSIJA' ) ) {
+		// throw warning
+		add_action( 'admin_notices', 'mailbard_wysija_warning' );
+	} else {
+		// load
+		require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'legacy'.DIRECTORY_SEPARATOR.'index.php');
+	}
 }
 
 function mailbard_wysija_warning() {
 	?>
 	<div class="notice error">
-		<p><?php printf( __( 'MailBard cannot run while MailPoet 2 is still activated.  Please go to your <a href="%s">Plugins</a> page and de-activate it now.  Don\'t worry, you won\'t lose any data, and MailBard will pick up right where MailPoet 2 left off!', 'mailbard' ), plugins_url() ); ?></p>
+		<p><?php printf( __( 'MailBard cannot run while MailPoet 2 is still activated.  Please go to your <a href="%s">Plugins</a> page and de-activate MailPoet 2 now.  Don\'t worry, you won\'t lose any data, and MailBard will pick up right where you left off!', 'mailbard' ), admin_url('plugins.php') ); ?></p>
 	</div>
 	<?php
 }
