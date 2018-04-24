@@ -189,7 +189,7 @@ class WYSIJA_control_back_campaigns extends WYSIJA_control_back {
 		$this->requireSecurity();
                 $modelQ = WYSIJA::get('queue', 'model');
 		$config = WYSIJA::get('config', 'model');
-		if ((int) $config->getValue('total_subscribers') < 2000) {
+		if ((int) $config->getValue('total_subscribers') ) {
 			if ($modelQ->count() > 0) {
 				$helperQ = WYSIJA::get('queue', 'helper');
 				$emailid = false;

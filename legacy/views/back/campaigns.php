@@ -760,7 +760,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 
 	function sending_process() {
 		$config = WYSIJA::get("config", "model");
-		if ((int) $config->getValue('total_subscribers') < 2000)
+		if ((int) $config->getValue('total_subscribers') )
 			return true;
 		return false;
 	}

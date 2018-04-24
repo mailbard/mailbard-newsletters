@@ -338,7 +338,7 @@ class WYSIJA_control_back extends WYSIJA_control{
         $config=WYSIJA::get('config','model');
         $totalSubscribers=$config->getValue('total_subscribers');
         $helper_licence = WYSIJA::get('licence','helper');
-
+		/*
         if((int)$totalSubscribers>1900){
             if((int)$totalSubscribers>2000){
 
@@ -356,6 +356,7 @@ class WYSIJA_control_back extends WYSIJA_control{
                             ,"2000")));
             }
         }
+		*/
     }
 
     function edit($id=false){

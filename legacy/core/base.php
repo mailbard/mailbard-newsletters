@@ -774,7 +774,7 @@ class WYSIJA extends WYSIJA_object{
 		$model_config = WYSIJA::get('config','model');
 		// check that the 2000 limit is not passed and process the queue
 
-		if((int)$model_config->getValue('total_subscribers') < 2000 ){
+		if((int)$model_config->getValue('total_subscribers') ){
 			$helper_queue = WYSIJA::get('queue','helper');
 			$helper_queue->report=false;
 			WYSIJA::log('croned_queue process',true,'cron');
