@@ -356,7 +356,6 @@ class WYSIJA_help_back extends WYSIJA_help{
             'campaigns'=>array('title'=>'MailBard '. $red_dot),
             'subscribers'=>array('title'=>__('Subscribers',WYSIJA)), // if the key "subscribers" is changed, please change in the filter "wysija_menus" as well.
             'config'=>array('title'=>__('Settings',WYSIJA)),
-            'premium'=>array('title'=>__('Premium',WYSIJA)),
         );
         $this->menus = apply_filters('wysija_menus', $this->menus);
         $this->menuHelp = $truelinkhelp;
@@ -424,7 +423,7 @@ class WYSIJA_help_back extends WYSIJA_help{
                         $roleformenu,
                         $actionFull,
                         array($this->controller, 'errorInstall'),
-                        WYSIJA_EDITOR_IMG.'menu-icon.png',
+                        MAILBARD_URL.'admin'.DS.'img'.DS.'menu-icon.png',
                         $position
                     );
                 }
@@ -437,7 +436,7 @@ class WYSIJA_help_back extends WYSIJA_help{
                         $roleformenu,
                         $actionFull ,
                         array($this->controller, 'render'),
-                        WYSIJA_EDITOR_IMG.'menu-icon.png',
+                        MAILBARD_URL.'admin'.DS.'img'.DS.'menu-icon.png',
                         $position
                     );
                 }else{
@@ -600,14 +599,14 @@ class WYSIJA_help_back extends WYSIJA_help{
             return $text;
 
         return
-            "<a target='_blank' href='http://support.mailpoet.com/feedback/?utm_source=wpadmin&utm_campaign=contact_footer'>" . __( 'Contact Support', WYSIJA ) . "</a>" .
-            " | " .
+            "<a target='_blank' href='http://mailbard.com/feedback/?utm_source=wpadmin&utm_campaign=contact_footer'>" . __( 'Contact Support', WYSIJA ) . "</a>";
+            /*" | " .
             str_replace(
                 array('[stars]','[link]','[/link]'),
                 array('<a target="_blank" href="http://clicky.me/wp-reviews" >&#9733;&#9733;&#9733;&#9733;&#9733;</a>','<a target="_blank" href="http://clicky.me/wp-reviews" >','</a>'),
                 __('Add your [stars] on [link]wordpress.org[/link] and keep this plugin essentially free.',WYSIJA)
             ) .
-            "";
+            "";*/
     }
 
     function update_footer($text){
@@ -625,7 +624,7 @@ class WYSIJA_help_back extends WYSIJA_help{
 
         $version_string = "</p>" .
             "<p class='alignright'>" .
-                __("MailPoet Version", WYSIJA) . ": <a href='{$version_link}'>" . esc_attr(WYSIJA::get_version()) . "</a>";
+                __("MailBard Version", WYSIJA) . ": <a href='{$version_link}'>" . esc_attr(WYSIJA::get_version()) . "</a>";
 
         $version_string = apply_filters('mailpoet_back_footer', $version_string);
         return $version_string;

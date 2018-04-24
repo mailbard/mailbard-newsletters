@@ -911,7 +911,7 @@ class WYSIJA_view_back_subscribers extends WYSIJA_view_back
 			<tr class="csvmode copy">
 			    <th scope="row" >
 				<label for="csvtext"><?php _e('Then paste your list here', WYSIJA); ?> </label>
-		    <p class="description"><?php echo str_replace(array("[link]", "[/link]"), array('<a target="_blank" href="http://support.mailpoet.com/knowledgebase/importing-subscribers-with-a-csv-file/?utm_source=wpadmin&utm_campaign=import">', '</a>'), __('This needs to be in CSV style or a simple paste from Gmail, Hotmail or Yahoo. See [link]examples in our support site[/link].', WYSIJA)) ?></p>
+		    <p class="description"><?php echo str_replace(array("[link]", "[/link]"), array('<a target="_blank" href="http://mailbard.com/knowledgebase/importing-subscribers-with-a-csv-file/?utm_source=wpadmin&utm_campaign=import">', '</a>'), __('This needs to be in CSV style or a simple paste from Gmail, Hotmail or Yahoo. See [link]examples in our support site[/link].', WYSIJA)) ?></p>
 		    </th>
 		    <td>
 			<textarea type="text" style="width:500px;" cols="130" rows="10" class="validate[required]" id="csvtext" name="wysija[user_list][csv]" /></textarea>
@@ -922,7 +922,7 @@ class WYSIJA_view_back_subscribers extends WYSIJA_view_back
 		    <tr class="csvmode upload">
 			<th scope="row" >
 			    <label for="csvfile"><?php _e('Upload a file', WYSIJA); ?> </label>
-		    <p class="description"><?php echo str_replace(array("[link]", "[/link]"), array('<a target="_blank" href="http://support.mailpoet.com/knowledgebase/importing-subscribers-with-a-csv-file/?utm_source=wpadmin&utm_campaign=import file">', '</a>'), __('This needs to be in CSV style. See [link]examples in our support site[/link].', WYSIJA)) ?></p>
+		    <p class="description"><?php echo str_replace(array("[link]", "[/link]"), array('<a target="_blank" href="http://mailbard.com/knowledgebase/importing-subscribers-with-a-csv-file/?utm_source=wpadmin&utm_campaign=import file">', '</a>'), __('This needs to be in CSV style. See [link]examples in our support site[/link].', WYSIJA)) ?></p>
 		    </th>
 		    <td>
 			<input type="file" name="importfile" size="50" />( <?php echo sprintf(__('total max upload file size : %1$s', WYSIJA), $bytes) ?> )
@@ -935,7 +935,7 @@ class WYSIJA_view_back_subscribers extends WYSIJA_view_back
 			    <label for="redirect"><?php _e('Did these subscribers ask to be in your list?', WYSIJA); ?> </label>
 		    <p class="description">
 			    <?php _e('If the answer is "no", consider yourself a spammer.', WYSIJA); ?><br />
-			    <?php echo str_replace(array("[link]", "[/link]"), array('<a target="_blank" href="http://support.mailpoet.com/knowledgebase/dont-import-subscribers-who-didnt-sign-up/#utm_source=wpadmin&utm_campaign=importwarning">', '</a>'), __('[link]Read more on support.mailpoet.com[/link].', WYSIJA)) ?>
+			    <?php echo str_replace(array("[link]", "[/link]"), array('<a target="_blank" href="http://mailbard.com/knowledgebase/dont-import-subscribers-who-didnt-sign-up/#utm_source=wpadmin&utm_campaign=importwarning">', '</a>'), __('[link]Read more on mailbard.com[/link].', WYSIJA)) ?>
 		    </p>
 		    </th>
 		    </tr>

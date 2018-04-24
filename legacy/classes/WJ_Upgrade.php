@@ -15,6 +15,7 @@ class WJ_Upgrade extends WYSIJA_object {
 	);
 
 	public static function hook(){
+		/*
 		null === self::$instance and self::$instance = new self;
 
 		if ( ! is_admin() ) {
@@ -30,6 +31,7 @@ class WJ_Upgrade extends WYSIJA_object {
 		add_action( 'init', array( self::$instance, 'update_warning' ) );
 
 		add_filter( 'pre_set_site_transient_update_plugins', array( self::$instance, 'pre_set_site_transient_update_plugins' ), 100 );
+		*/
 	}
 
 	public function update_warning() {

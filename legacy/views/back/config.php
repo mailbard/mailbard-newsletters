@@ -214,7 +214,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 		$field .= '<div class="cronright" id="'.$key.'_linkname">';
 
 		$text_cron_manual_trigger = __('I\'ll setup a cron job on my server to execute at the frequency I want. Read about [link]setting up a cron job yourself[/link].', WYSIJA).'<br/><span>'.__('Use this URL in your cron job: [cron_url]').'</span>';
-		$text_cron_manual_trigger = str_replace(array( '[link]', '[/link]', '[cron_url]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/configure-cron-job/?utm_source=wpadmin&utm_campaign=advanced_settings" title="Seting up cron job" target="_blank">', '</a>', '<a href="'.$url_cron.'" target="_blank">'.$url_cron.'</a>' ), $text_cron_manual_trigger);
+		$text_cron_manual_trigger = str_replace(array( '[link]', '[/link]', '[cron_url]' ), array( '<a href="http://mailbard.com/knowledgebase/configure-cron-job/?utm_source=wpadmin&utm_campaign=advanced_settings" title="Seting up cron job" target="_blank">', '</a>', '<a href="'.$url_cron.'" target="_blank">'.$url_cron.'</a>' ), $text_cron_manual_trigger);
 
 		$text_cron_page_view	  = __('No thanks! I have enough visitors on my site. Their visits will trigger MailPoet\'s cron automatically.', WYSIJA);
 		$values_page_view_trigger = array( 2 => $text_cron_manual_trigger, 1 => $text_cron_page_view );
@@ -232,7 +232,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 		$field .= '</div></div>';
 
 		// replace the variable in the text
-		$field = str_replace(array( '[link]', '[/link]', '[cron_url]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/configure-cron-job/?utm_source=wpadmin&utm_campaign=advanced_settings" title="Seting up cron job" target="_blank">', '</a>', '<a href="'.$url_cron.'" target="_blank">'.$url_cron.'</a>' ), $field);
+		$field = str_replace(array( '[link]', '[/link]', '[cron_url]' ), array( '<a href="http://mailbard.com/knowledgebase/configure-cron-job/?utm_source=wpadmin&utm_campaign=advanced_settings" title="Seting up cron job" target="_blank">', '</a>', '<a href="'.$url_cron.'" target="_blank">'.$url_cron.'</a>' ), $field);
 
 		return $field;
 	}
@@ -253,7 +253,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 		$field	= '<p>';
 
 		$text_cron_manual_trigger = __('If I want I can [link]create an additional cron job[/link] on my end to increase the frequency.', WYSIJA).'<br/><span>'.__('Use this URL in your cron job: [cron_url]').'</span>';
-		$field .= str_replace(array( '[link]', '[/link]', '[cron_url]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/configure-cron-job/?utm_source=wpadmin&utm_campaign=advanced_settings" title="Seting up cron job" target="_blank">', '</a>', '<a href="'.$url_cron.'" target="_blank">'.$url_cron.'</a>' ), $text_cron_manual_trigger);
+		$field .= str_replace(array( '[link]', '[/link]', '[cron_url]' ), array( '<a href="http://mailbard.com/knowledgebase/configure-cron-job/?utm_source=wpadmin&utm_campaign=advanced_settings" title="Seting up cron job" target="_blank">', '</a>', '<a href="'.$url_cron.'" target="_blank">'.$url_cron.'</a>' ), $text_cron_manual_trigger);
 
 		$field .= '</p>';
 
@@ -328,7 +328,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 
 		$field.='<div id="'.$realkey.'_linkname" >';
 		//$titlelink=str_replace(array('[link]','[\link]'), array('<a href="">','</a>'),'');
-		$titlelink = __('Configure your DNS by adding a key/value record in TXT as shown below.', WYSIJA).' <a href="http://support.mailpoet.com/knowledgebase/guide-to-dkim-in-wysija/?utm_source=wpadmin&utm_campaign=settings" target="_blank">'.__('Read more', WYSIJA).'</a>';
+		$titlelink = __('Configure your DNS by adding a key/value record in TXT as shown below.', WYSIJA).' <a href="http://mailbard.com/knowledgebase/guide-to-dkim-in-wysija/?utm_source=wpadmin&utm_campaign=settings" target="_blank">'.__('Read more', WYSIJA).'</a>';
 		$field.='<fieldset style=" border: 1px solid #ccc;margin: 0;padding: 10px;"><legend>'.$titlelink.'</legend>';
 
 		$field.='<label id="drlab" for="domainrecord">'.__('Key', WYSIJA).' <input readonly="readonly" id="domainrecord" style="margin-right:10px;" type="text" value="wys._domainkey"/></label><label id="drpub" for="dkimpub">'.__('Value', WYSIJA).' <input readonly="readonly" id="dkimpub" type="text" size="70" value="v=DKIM1;s=email;t=s;p='.$this->model->getValue($keypublickey).'"/></label>';
@@ -724,7 +724,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 			'type'   => 'radio',
 			'values' => array( true	=> __('Yes', WYSIJA), false   => __('No', WYSIJA) ),
 			'label' => __('Enable signup confirmation', WYSIJA),
-			'desc'  => __('Prevent people from being subscribed to your list unwillingly, this option ensures you to keep a clean list.', WYSIJA).' <a href="http://support.mailpoet.com/knowledgebase/why-you-should-enforce-email-activation/?utm_source=wpadmin&utm_campaign=activation email" target="_blank">'.__('Learn more.', WYSIJA).'</a>' );
+			'desc'  => __('Prevent people from being subscribed to your list unwillingly, this option ensures you to keep a clean list.', WYSIJA).' <a href="http://mailbard.com/knowledgebase/why-you-should-enforce-email-activation/?utm_source=wpadmin&utm_campaign=activation email" target="_blank">'.__('Learn more.', WYSIJA).'</a>' );
 
 		if (!$this->_user_can('toggle_signup_confirmation')) {
 			$step['confirm_dbleoptin']['type'] = 'disabled_radio';
@@ -825,7 +825,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 						$field = '<label for="'.$id.'" class="clearfix">';
 						$field.= $helper_forms->radio(array( 'id'	   => $id, 'class'	=> 'mailpoet-delivery-method', 'name'	 => 'wysija[config]['.$key.']' ), $value, $checked);
 						$field.= '<h3>'.__('Third party', WYSIJA).'</h3></label>';
-						$field.='<p>'.__('Send with a professional SMTP provider, a great choice for big and small lists. We\'ve negotiated promotional offers with a few providers for you.', WYSIJA).' <a href="http://support.mailpoet.com/knowledgebase/send-with-smtp-when-using-a-professional-sending-provider/?utm_source=wpadmin&utm_campaign=sending method" target="_blank">'.__('Read more', WYSIJA).'</a>.</p>';
+						$field.='<p>'.__('Send with a professional SMTP provider, a great choice for big and small lists. We\'ve negotiated promotional offers with a few providers for you.', WYSIJA).' <a href="http://mailbard.com/knowledgebase/send-with-smtp-when-using-a-professional-sending-provider/?utm_source=wpadmin&utm_campaign=sending method" target="_blank">'.__('Read more', WYSIJA).'</a>.</p>';
 						echo $field;
 						?>
 					</th>
@@ -1074,7 +1074,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 						<?php
 						$field = __('Send...', WYSIJA);
 
-						echo $field.'<p class="description">'.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=choosing%20frequency" target="_blank">', '</a>' ), __('Your web host has limits. We suggest 70 emails per hour to be safe. [link]Find out more[/link].', WYSIJA)).'</p>';
+						echo $field.'<p class="description">'.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://mailbard.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=choosing%20frequency" target="_blank">', '</a>' ), __('Your web host has limits. We suggest 70 emails per hour to be safe. [link]Find out more[/link].', WYSIJA)).'</p>';
 						?>
 					</th>
 					<td colspan="<?php echo ( is_multisite() ? 3 : 2 ); ?>">
@@ -1094,7 +1094,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 						$value = $this->model->getValue($name);
 						$field .=$helper_forms->dropdown(array( 'name' => 'wysija[config]['.$name.']', 'id'   => $id ), $helper_forms->eachValues, $value);
 						echo $field;
-						echo '<div class="mailpoet-frequency_warning hidden"><b>'.__('This is fast!', WYSIJA).'</b> '.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=cron" target="_blank">', '</a>' ), __('We suggest you setup a cron job. [link]Read more[/link] on support.mailpoet.com', WYSIJA)).'</span>';
+						echo '<div class="mailpoet-frequency_warning hidden"><b>'.__('This is fast!', WYSIJA).'</b> '.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://mailbard.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=cron" target="_blank">', '</a>' ), __('We suggest you setup a cron job. [link]Read more[/link] on mailbard.com', WYSIJA)).'</span>';
 						?>
 					</td>
 				</tr>
@@ -1174,7 +1174,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 			'values'   => array( true	=> __('Yes', WYSIJA), false   => __('No', WYSIJA) ),
 			'label' => __('Share anonymous data', WYSIJA),
 			'desc'  => __('Share anonymous data and help us improve the plugin. [link]Read more[/link].', WYSIJA),
-			'link'  => '<a target="_blank" href="http://support.mailpoet.com/knowledgebase/share-your-data/?utm_source=wpadmin&utm_campaign=advanced_settings">'
+			'link'  => '<a target="_blank" href="http://mailbard.com/knowledgebase/share-your-data/?utm_source=wpadmin&utm_campaign=advanced_settings">'
 		);
 
 		$advanced_fields ['industry'] = array(
@@ -1677,7 +1677,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 
 		$field = __('Send...', WYSIJA);
 
-		$html_content.=$field.'<p class="description">'.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=choosing%20frequency" target="_blank">', '</a>' ), __('Your web host has limits. We suggest 70 emails per hour to be safe. [link]Find out more[/link].', WYSIJA)).'</p>';
+		$html_content.=$field.'<p class="description">'.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://mailbard.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=choosing%20frequency" target="_blank">', '</a>' ), __('Your web host has limits. We suggest 70 emails per hour to be safe. [link]Find out more[/link].', WYSIJA)).'</p>';
 		$html_content.='</th>
 					<td colspan="2">';
 
@@ -1693,7 +1693,7 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 		$id	= str_replace('_', '-', $name);
 		$value = $model_config->getValue($name);
 		$field.=$helper_forms->dropdown(array( 'name' => 'wysija[config]['.$name.']', 'id'   => $id ), $helper_forms->eachValues, $value);
-		$field.='<span class="ms-choice-under15"><b>'.__('This is fast!', WYSIJA).'</b> '.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://support.mailpoet.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=cron" target="_blank">', '</a>' ), __('We suggest you setup a cron job. [link]Read more[/link] on support.mailpoet.com', WYSIJA)).'</span>';
+		$field.='<span class="ms-choice-under15"><b>'.__('This is fast!', WYSIJA).'</b> '.str_replace(array( '[link]', '[/link]' ), array( '<a href="http://mailbard.com/knowledgebase/wp-cron-batch-emails-sending-frequency/?utm_source=wpadmin&utm_campaign=cron" target="_blank">', '</a>' ), __('We suggest you setup a cron job. [link]Read more[/link] on mailbard.com', WYSIJA)).'</span>';
 		$html_content.=$field;
 
 

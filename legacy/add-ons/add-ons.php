@@ -243,7 +243,7 @@ class MailPoet_Add_ons {
 
 		echo
 			'<div class="submit-idea">' .
-				'<p>' . wp_kses( sprintf( __( 'Don\'t see the add-on you\'re looking for? <a href="%s">Submit it</a> in our contact form.', WYSIJA ), 'http://www.mailpoet.com/contact/" target="blank' ), array( 'a' => array( 'href' => array() ) ) ) . '</p>' .
+				'<p>' . wp_kses( sprintf( __( 'Don\'t see the add-on you\'re looking for? <a href="%s">Submit it</a> in our contact form.', WYSIJA ), 'http://www.mailbard.com/contact/" target="blank' ), array( 'a' => array( 'href' => array() ) ) ) . '</p>' .
 			'</div>' .
 		'</div>';
 	}

@@ -581,17 +581,18 @@ class WYSIJA extends WYSIJA_object{
 		// also we will defined the $extended_plugin_name which corresponds to the folder name and also will be used to build the class to be called
 		switch($extended_plugin){
 			case 'wysija-newsletters-premium':
+				$extended_plugin = '..'.DS.'wysija-newsletters-premium';
 				$extended_constant='WYSIJANLP';
 				if(!defined($extended_constant)) define($extended_constant,$extended_constant);
 				$extended_plugin_name='wysijanlp';
 				break;
 			case 'legacy':
-				$extended_plugin = 'legacy';
 				$extended_constant='WYSIJA';
 				if(!defined($extended_constant)) define($extended_constant,$extended_constant);
 				$extended_plugin_name='wysija';
 				break;
 			default :
+				$extended_plugin = '..'.DS.$extended_plugin;
 				$extended_constant=strtoupper($extended_plugin);
 				if(!defined($extended_constant)) define($extended_constant,$extended_constant);
 				$extended_plugin_name=$extended_plugin;

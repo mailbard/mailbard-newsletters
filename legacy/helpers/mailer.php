@@ -52,7 +52,7 @@ class WYSIJA_help_mailer extends PHPMailer {
 	function __construct($extension='',$config=false, $multisiteTest=false) {
 		$this->core = new WYSIJA_OBJECT();
 
-		$this->XMailer = 'MailPoet (https://www.mailpoet.com)';
+		$this->XMailer = 'MailBard (http://www.mailbard.com)';
 		$this->subscriberClass = WYSIJA::get( 'user', 'model' );
 		$this->subscriberClass->getFormat = OBJECT;
 

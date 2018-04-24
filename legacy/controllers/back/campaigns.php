@@ -117,22 +117,7 @@ class WYSIJA_control_back_campaigns extends WYSIJA_control_back {
 
         $this->data['sections'][] = array(
           'format' => 'title-content',
-          'paragraphs' => array('
-<ul style="list-style: disc inside none">
-  <li><a href="http://beta.docs.mailpoet.com/article/234-video-overview?utm_source=mp2&utm_campaign=whatsnew">'.__("View the 2-minute video", WYSIJA).'</a></li>
-  <li><a href="https://www.mailpoet.com/faq-mailpoet-version-2/?utm_source=mp2&utm_campaign=whatsnew">'.__("Read the FAQ", WYSIJA).'</a></li>
-  <li><a href="http://beta.docs.mailpoet.com/article/189-comparison-of-mailpoet-2-and-3?utm_source=mp2&utm_campaign=whatsnew">'.__('Comparison table of both versions', WYSIJA).'</a></li>
-  <li><a href="http://demo.mailpoet.com?utm_source=mp2&utm_campaign=whatsnew">'.__('Try the online demo', WYSIJA).'</li>
-</ul>
-<br/>
-<a class="button-primary" href="plugin-install.php?s=mailpoet&tab=search&type=author">'.__('Download MailPoet 3 now', WYSIJA).'</a>
-
-<!-- poll -->
-<div><br/><br/></div>
-<style type="text/css">.pds-box { margin: 0 !important; }</style>
-<script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/9882029.js"></script>
-<noscript><a href="https://polldaddy.com/poll/9882029/">I\'m not switching to the new MailPoet 3 because...</a></noscript>
-          ')
+          'paragraphs' => array('Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  For further information on this product, visit <a href="http://mailbard.com/">mailbard.com</a>.')
         );
 
 		$this->viewObj->skip_header = true;

@@ -60,7 +60,7 @@ class WYSIJA_view_back_statistics extends WYSIJA_view_back{
     }
 
     protected function render_feedback_form() {
-	$url = 'http://support.mailpoet.com/feedback/?utm_source=wpadmin&utm_campaign=contact_stats';
+	$url = 'http://mailbard.com/feedback/?utm_source=wpadmin&utm_campaign=contact_stats';
 	echo "<div class='stats_feedback'>".
 		str_replace(
                     array('[link]', '[/link]'),

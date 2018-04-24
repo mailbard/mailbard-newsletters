@@ -711,7 +711,7 @@ class WJ_Import extends WYSIJA_object {
 		 // if we didn't manage to find a separator in that file then it is not a csv file and we come out
 		if(empty($this->_csv_data['fsep'])){
 			$this->notice( sprintf(
-				"%s <a href='http://support.mailpoet.com/knowledgebase/importing-subscribers-with-a-csv-file/' target='_blank'>%s</a>",
+				"%s <a href='http://mailbard.com/knowledgebase/importing-subscribers-with-a-csv-file/' target='_blank'>%s</a>",
 				__("The data you are trying to import doesn't appear to be in the CSV format (Comma Separated Values).", WYSIJA),
 				__("Read More", WYSIJA)
 			) );

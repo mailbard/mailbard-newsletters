@@ -1277,7 +1277,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 					<?php echo __('Our toolbar doesn\'t load?', WYSIJA) ?>
 						<br />
 						<?php
-						echo str_replace(array('[link]', '[/link]'), array('<a title="' . __('Conflict', WYSIJA) . '" target="_blank" href="http://support.mailpoet.com/knowledgebase/list-of-plugins-that-may-cause-conflict/">', '</a>'), __('There must be an active 3rd party plugin or theme breaking our interface. [link]Read more.[/link]', WYSIJA));
+						echo str_replace(array('[link]', '[/link]'), array('<a title="' . __('Conflict', WYSIJA) . '" target="_blank" href="http://mailbard.com/knowledgebase/list-of-plugins-that-may-cause-conflict/">', '</a>'), __('There must be an active 3rd party plugin or theme breaking our interface. [link]Read more.[/link]', WYSIJA));
 						?>
 					</span>
 					<img alt="loader" id="ajax-loading" src="<?php echo WYSIJA_URL ?>img/wpspin_light.gif" />
@@ -1938,7 +1938,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 						<input type="button" id="sub-theme-box" name="submit" value="<?php echo esc_attr(__('Upload Theme (.zip)', WYSIJA)); ?>" class="button-secondary"/>
 						<span id="filter-selection"></span>
 						&nbsp;&nbsp;
-						<span><?php echo str_replace(array('[link]', '[/link]'), array('<a href="http://support.mailpoet.com/knowledgebase/guide-to-creating-your-own-mailpoet-theme?utm_source=wpadmin&utm_campaign=theme%20guide" target="_blank">', '</a>'), __('[link]Guide[/link] to create your own theme.', WYSIJA)); ?></span>
+						<span><?php echo str_replace(array('[link]', '[/link]'), array('<a href="http://mailbard.com/knowledgebase/guide-to-creating-your-own-mailpoet-theme?utm_source=wpadmin&utm_campaign=theme%20guide" target="_blank">', '</a>'), __('[link]Guide[/link] to create your own theme.', WYSIJA)); ?></span>
 						<div id="wj_paginator">
 							<a class="selected" href="javascript:;" data-type="free"><?php _e('Free', WYSIJA); ?></a>
 							<a href="javascript:;" data-type="premium"><?php _e('Premium', WYSIJA); ?></a>
@@ -2031,7 +2031,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 		// display option: excerpt / full post / title only
 		$knowledgebase_url = str_replace(
 			array('[link]', '[/link]'),
-			array('<a href="http://support.mailpoet.com/knowledgebase/excerpts-in-wysija/?utm_source=wpadmin&utm_campaign=editor" target="_blank">', '</a>'),
+			array('<a href="http://mailbard.com/knowledgebase/excerpts-in-wysija/?utm_source=wpadmin&utm_campaign=editor" target="_blank">', '</a>'),
 			__('Which excerpt does it use? [link]Read more[/link]', WYSIJA)
 		);
 
@@ -2653,14 +2653,14 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 				?>
 					<div id="update-page" class="about-wrap mpoet-page">
 
-						<h1><?php echo __('Try the new (and much better) MailPoet now', WYSIJA); ?></h1>
+						<h1><?php echo __('Welcome to MailBard', WYSIJA); ?></h1>
 
-            <div class="updated" style="display: block !important;"><p><?php
+            <div class="updated" style="display: block !important;"><p><?php /*
             echo $this->replace_link_shortcode(
                   __('Save up to $100 on the <b>new MailPoet</b> before the end of the year. [link]See pricing[/link].', WYSIJA),
                   'https://account.mailpoet.com'
                 );
-            ?></p></div>
+            */ ?></p></div>
 
 						<div class="about-text" style="visibility:hidden"><?php echo $data['abouttext'] ?></div>
 						<?php
@@ -2718,7 +2718,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 			}
 			?>
 
-						<a class="button-primary" href="admin.php?page=wysija_campaigns"><?php _e("No thanks! I'll use MailPoet version 2 for now", WYSIJA); ?></a>
+						<a class="button-primary" href="admin.php?page=wysija_campaigns"><?php _e("Continue", WYSIJA); ?></a>
 
 					</div>
 
@@ -2779,22 +2779,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
         $data['sections'][] = array(
           'title' => __("Try the new version 3 today.", WYSIJA),
           'format' => 'title-content',
-          'content' => '
-<ul style="list-style: disc inside none">
-  <li><a href="http://beta.docs.mailpoet.com/article/234-video-overview?utm_source=mp2&utm_campaign=whatsnew">'.__("View the 2-minute video", WYSIJA).'</a></li>
-  <li><a href="https://www.mailpoet.com/faq-mailpoet-version-2/?utm_source=mp2&utm_campaign=whatsnew">'.__("Read the FAQ", WYSIJA).'</a></li>
-  <li><a href="http://beta.docs.mailpoet.com/article/189-comparison-of-mailpoet-2-and-3?utm_source=mp2&utm_campaign=whatsnew">'.__('Comparison table of both versions', WYSIJA).'</a></li>
-  <li><a href="http://demo.mailpoet.com?utm_source=mp2&utm_campaign=whatsnew">'.__('Try the online demo', WYSIJA).'</li>
-</ul>
-<br/>
-<a class="button-primary" href="plugin-install.php?s=mailpoet&tab=search&type=author">'.__('Download MailPoet 3 now', WYSIJA).'</a>
-
-<!-- poll -->
-<div><br/><br/></div>
-<style type="text/css">.pds-box { margin: 0 !important; }</style>
-<script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/9882029.js"></script>
-<noscript><a href="https://polldaddy.com/poll/9882029/">I\'m not switching to the new MailPoet 3 because...</a></noscript>
-          '
+          'content' => 'Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  For further information on this product, visit <a href="http://mailbard.com/">mailbard.com</a>.'
         );
 
 				if ($is_multisite) {
@@ -2872,14 +2857,14 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 				?>
 				<div id="update-page" class="about-wrap mpoet-page">
 
-					<h1><?php echo sprintf(__('You\'ve updated to %1$s', WYSIJA), '<span class="version">MailPoet '.WYSIJA::get_version())."</span>"; ?></h1>
+					<h1><?php echo sprintf(__('You\'ve updated to %1$s', WYSIJA), '<span class="version">MailBard '.WYSIJA::get_version())."</span>"; ?></h1>
 
-          <div class="updated"><p><?php
+          <div class="updated"><p><?php /*
             echo $this->replace_link_shortcode(
                   __('Save up to $100 on the <b>new MailPoet</b> before the end of the year. [link]See pricing[/link].', WYSIJA),
                   'https://account.mailpoet.com'
                 );
-            ?></p></div>
+            */ ?></p></div>
 
 					<div class="about-text"><?php echo $data['abouttext'] ?></div>
 					<?php

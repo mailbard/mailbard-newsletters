@@ -31,6 +31,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Not allowed' );
 }
 
+define( 'MAILBARD_URL', plugins_url( '', __FILE__ ).'/' );
+
+
 add_action( 'plugins_loaded', 'mailbard_loader' );
 
 function mailbard_loader() {
@@ -54,4 +57,24 @@ function mailbard_wysija_warning() {
 		<p><?php printf( __( 'MailBard cannot run while MailPoet 2 is still activated.  Please go to your <a href="%s">Plugins</a> page and de-activate MailPoet 2 now.  Don\'t worry, you won\'t lose any data, and MailBard will pick up right where you left off!', 'mailbard' ), admin_url('plugins.php') ); ?></p>
 	</div>
 	<?php
+}
+
+// to maintain compatibility for old MailPoet extensions:
+if ( ! function_exists( 'wysija_is_plg_active' ) ){
+	function wysija_is_plg_active( $filename ){
+		if ( $filename === 'wysija-newsletters/index.php' ) {
+			return true;
+		}
+		$arrayactiveplugins = get_option( 'active_plugins' );
+		if ( in_array( $filename, $arrayactiveplugins ) ){
+			return true;
+		}
+		if ( is_multisite() ) {
+			$arrayactiveplugins = get_site_option( 'active_sitewide_plugins' );
+			if ( isset( $arrayactiveplugins[ $filename ] ) || in_array( $filename, $arrayactiveplugins ) ){
+				return true;
+			}
+		}
+		return false;
+	}
 }
