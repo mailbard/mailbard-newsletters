@@ -4,6 +4,7 @@
     <input type="hidden" name="action" value="save" />
     <input type="hidden" name="controller" value="subscribers" />
     <input type="hidden" value="1" name="wysija-page" />
+	<input type="hidden" value="" name="mailbard_nonce" />
 
     {if #settings.lists_selected_by != 'user'}
         <input type="hidden" name="wysija[user_list][list_ids]" value="{#settings.lists|join:','}" />

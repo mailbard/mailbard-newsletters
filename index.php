@@ -38,8 +38,13 @@ function mailbard_loader() {
 		// throw warning
 		add_action( 'admin_notices', 'mailbard_wysija_warning' );
 	} else {
-		// load
+	
+		// load legacy code
 		require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'legacy'.DIRECTORY_SEPARATOR.'index.php');
+		
+		// load additional new code here
+		require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR.'includes'.DIRECTORY_SEPARATOR.'mailbard-ajax.php');
+		
 	}
 }
 

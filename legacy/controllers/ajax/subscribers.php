@@ -23,6 +23,7 @@ class WYSIJA_control_back_subscribers extends WYSIJA_control_front{
     }
 
     function save(){
+		$this->requireSecurity();
         $datarequested=array();
         $i=0;
         foreach($_REQUEST['data'] as $vals){

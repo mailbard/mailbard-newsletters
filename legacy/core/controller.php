@@ -49,8 +49,17 @@ class WYSIJA_control extends WYSIJA_object{
             return $actionnonce;
         }
 
-	private function _nonce_verification(){
-		if(!empty($_REQUEST['_wpnonce'])){
+	private function _nonce_verification( $mailbard_nonce = null ){
+		if ( $mailbard_nonce ) {
+		
+			if( ! wp_verify_nonce( $mailbard_nonce, 'mailbard_ajax' ) ) {
+				wp_die("<h2>" . __('Security failure during request') . "</h2>", __("Security Problem"), array(
+					'response' => 403,
+					'back_link' => false
+				));
+			}
+		
+		} elseif(!empty($_REQUEST['_wpnonce'])){
 			if($_REQUEST['action']=='wysija_ajax'){
 				$actionnonce = $this->_rebuild_ajax_nonce_action();
 			}else{
@@ -86,11 +95,20 @@ class WYSIJA_control extends WYSIJA_object{
 	 */
 	function requireSecurity(){
 
-		if( !isset($_REQUEST['_wpnonce']) ) {
-		   die('Your request is not safe.');
-		}else{
-                    $this->_nonce_verification();
-                    return true;
+		$mailbard_nonce = null;
+		if ( isset( $_REQUEST['data'] ) ) {
+			foreach ( $_REQUEST['data'] as $data ) {
+				if ( is_array( $data ) && isset( $data['name'] ) && $data['name'] === 'mailbard_nonce' ) {
+					$mailbard_nonce = $data['value'];
+				}
+			}
+		}
+
+		if( isset($_REQUEST['_wpnonce']) || $mailbard_nonce ) {
+			$this->_nonce_verification( $mailbard_nonce );
+			return true;
+		} else {
+			die('Your request is not safe.');
 		}
 	}
 
