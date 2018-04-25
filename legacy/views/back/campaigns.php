@@ -2660,7 +2660,9 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
                   __('Save up to $100 on the <b>new MailPoet</b> before the end of the year. [link]See pricing[/link].', WYSIJA),
                   'https://account.mailpoet.com'
                 );
-            */ ?></p></div>
+            */ 
+			_e( 'Installation successful!', WYSIJA );
+			?></p></div>
 
 						<div class="about-text" style="visibility:hidden"><?php echo $data['abouttext'] ?></div>
 						<?php
@@ -2779,7 +2781,8 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
         $data['sections'][] = array(
           'title' => __("Try the new version 3 today.", WYSIJA),
           'format' => 'title-content',
-          'content' => 'Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  For further information on this product, visit <a href="http://mailbard.com/">mailbard.com</a>.'
+          'content' => 'Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  But, don\'t worry, MailBard will continue right where MailPoet 2 left off!
+		  <br /><br />For further information on this project, visit <a href="http://mailbard.com/">mailbard.com</a>.'
         );
 
 				if ($is_multisite) {

@@ -117,7 +117,8 @@ class WYSIJA_control_back_campaigns extends WYSIJA_control_back {
 
         $this->data['sections'][] = array(
           'format' => 'title-content',
-          'paragraphs' => array('Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  For further information on this product, visit <a href="http://mailbard.com/">mailbard.com</a>.')
+          'paragraphs' => array('Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  But, don\'t worry, MailBard will continue right where MailPoet 2 left off!
+		  <br /><br />For further information on this project, visit <a href="http://mailbard.com/">mailbard.com</a>.')
         );
 
 		$this->viewObj->skip_header = true;
