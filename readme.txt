@@ -16,5 +16,9 @@ More details will be added soon.  To contribute or ask questions, please visit u
 
 == Changelog ==
 
-= 0.1.0 - 2018-04-09 =
+= 0.1.0 - 2018-04-25 =
 * Initial release
+* Forked MailPoet 2.8.2
+* Introduced nonce checking system for ajax requests, to fix unpatched security hole in MailPoet 2.8.2
+* Removed 2000 subscribers limitation
+* Various renaming/branding/text changes
