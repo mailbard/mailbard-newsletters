@@ -1,11 +1,9 @@
 <?php
 /*
-Plugin Name: MailBard
+Plugin Name: MailBard Newsletters
 Plugin URI: http://www.mailbard.com/
 Description: Create and send newsletters or automated emails. Capture subscribers with a widget. Import and manage your lists. This plugin was forked from MailPoet 2 (no longer maintained), by the MailPoet team (http://www.mailpoet.com/).  MailBard is not affiliated with MailPoet.
 Version: 0.1.0
-Author: MailBard
-Author URI: http://www.mailbard.com/
 License: GPLv2 or later
 Text Domain: mailbard
 Domain Path: /languages/

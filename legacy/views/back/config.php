@@ -1306,7 +1306,11 @@ class WYSIJA_view_back_config extends WYSIJA_view_back {
 	 * Add-ons Manager developed by Sebs Studio
 	 */
 	function add_ons() {
-		include_once(WYSIJA_DIR.'/add-ons/add-ons.php');
+		?>
+		<div class="submit-idea">
+			<p><?php printf( __( 'MailBard is designed to be compatible with all your old MailPoet 2.x add-ons. However if you have any problems, <a href="%s">just let us know</a>.', WYSIJA ), 'http://www.mailbard.com/contact/" target="blank' ); ?></p>
+		</div>
+		<?php
 	}
 
 	/**

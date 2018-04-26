@@ -17,10 +17,10 @@ class WYSIJA_view_back_tmce extends WYSIJA_view_back{
         <!--[if lte IE 7]>
         <link rel='stylesheet' id='ie-css'  href='<?php echo $urlblog ?>/wp-admin/css/ie.css' type='text/css' media='all' />
         <![endif]-->
-        <link rel='stylesheet'  href='<?php echo $urlblog ?>/wp-content/plugins/wysija-newsletters/css/tmce/widget.css' type='text/css' media='all' />
+        <link rel='stylesheet'  href='<?php echo WYSIJA_URL; ?>css/tmce/widget.css' type='text/css' media='all' />
         <?php wp_print_scripts('jquery'); ?>
         <script type="text/javascript" src="<?php echo $urlblog; ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-        <script type='text/javascript' src='<?php echo $urlblog ?>/wp-content/plugins/wysija-newsletters/js/admin-tmce.js'></script>
+        <script type='text/javascript' src='<?php echo WYSIJA_URL; ?>js/admin-tmce.js'></script>
         <?php
     }
 

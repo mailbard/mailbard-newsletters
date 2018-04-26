@@ -231,8 +231,17 @@ class WYSIJA_module extends WYSIJA_control{
 		require_once(WYSIJA_CORE.'view.php');
 		require_once(WYSIJA_VIEWS.WYSIJA_SIDE.'.php');
 		if (empty($this->view_obj)){
-
-			$view_dir=WYSIJA_PLG_DIR.$this->extended_plugin.DS.'modules'.DS.$this->name; // quickfix, @todo
+			$extended_plugin = $this->extended_plugin;
+			switch($extended_plugin){
+				case 'wysija-newsletters-premium':
+					$extended_plugin = '..'.DS.'wysija-newsletters-premium';
+					break;
+				case 'legacy':
+					break;
+				default :
+					$extended_plugin = '..'.DS.$extended_plugin;
+			}
+			$view_dir=WYSIJA_PLG_DIR.$extended_plugin.DS.'modules'.DS.$this->name; // quickfix, @todo
 			$class_path=$view_dir.DS.$this->view.'.php';// @todo: check exists
 			$class_name = strtoupper('wysija').'_module_view_'.$this->view;
 			require_once(WYSIJA_CORE.'view.php');
