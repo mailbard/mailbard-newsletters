@@ -3,7 +3,7 @@ Contributors: mailbard
 Tags: newsletter, email, welcome email, post notification, autoresponder, signup, subscription, SMTP
 Requires at least: 3.5
 Tested up to: 4.9
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 Send newsletters post notifications or autoresponders from WordPress easily, and beautifully. Start to capture subscribers with our widget now.
 
 == Description ==
@@ -15,6 +15,9 @@ MailBard is a fork of the plugin MailPoet 2.  The MailPoet team has decided to s
 More details will be added soon.  To contribute or ask questions, please visit us at http://www.mailbard.com/.
 
 == Changelog ==
+
+= 0.1.2 - 2018-04-30 =
+* Various changes required by WordPress Plugins Review team
 
 = 0.1.1 - 2018-04-26 =
 * Various changes required by WordPress Plugins Review team
