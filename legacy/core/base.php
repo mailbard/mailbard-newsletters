@@ -1493,9 +1493,6 @@ add_action('delete_user', array('WYSIJA', 'hook_del_WP_subscriber'), 1);
 add_action('deleted_user', array('WYSIJA', 'hook_del_WP_subscriber'), 1);
 add_action('remove_user_from_blog', array('WYSIJA', 'hook_del_WP_subscriber'), 1);
 
-// Load the Upgrader Class
-add_action('init', array('WJ_Upgrade', 'hook'), 9);
-
 // post notif trigger
 add_action('transition_post_status', array('WYSIJA', 'hook_postNotification_transition'), 1, 3);
 // refresh auto newsletter content when a post is modified

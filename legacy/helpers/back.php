@@ -67,9 +67,6 @@ class WYSIJA_help_back extends WYSIJA_help{
             //make sure that admin and super admin always have the highest access
              $wptools = WYSIJA::get('wp_tools', 'helper');
              $wptools->set_default_rolecaps();
-
-            // Hook the warning function for premium.
-            add_action( 'admin_init', array(&$this, 'warn_action_on_premium') );
         }
 
         //if the comment form option is activated then we add an approval action
@@ -198,41 +195,6 @@ class WYSIJA_help_back extends WYSIJA_help{
             }
 
             wp_localize_script('wysija-admin', 'wysijanonces', $ajax_nonces);
-    }
-
-    /**
-     * On any of the administration pages related to MailPoet, if the user
-     * has the key and doesn't have the premium plugin active a warning will
-     * be displayed.
-     *
-     * @return null
-     */
-    public function warn_action_on_premium(){
-        $mdl_config=WYSIJA::get('config','model');
-
-        if($mdl_config->getValue('premium_key') && !WYSIJA::is_plugin_active(WJ_Upgrade::$plugins[1])){
-            if( file_exists( WPMU_PLUGIN_DIR . DIRECTORY_SEPARATOR . WJ_Upgrade::$plugins[1] ) ||  file_exists( WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . WJ_Upgrade::$plugins[1] ) ){
-                //send a message to the user so that he activates the premium plugin or try to fetch it directly.
-                $this->notice('<p>'.__('You need to activate the MailPoet Premium plugin.', WYSIJA).' <a data-warn="' . esc_attr__( "Confirm activating the MailPoet Premium Plugin?", WYSIJA ) . '" class="button-primary" title="' . esc_attr__( "Activate MailPoet Premium Version", WYSIJA ) . '" href="' . wp_nonce_url('plugins.php?action=activate&amp;plugin=' . urlencode(WJ_Upgrade::$plugins[1]) . '&amp;plugin_status=all', 'activate-plugin_' . WJ_Upgrade::$plugins[1]) . '">'.__('Activate now',WYSIJA).'</a></p>');
-            } else {
-
-                $args = array(
-                    'page' => 'wysija_config',
-                    'action' => 'packager-switch',
-                    '_mp_action' => 'install',
-                    '_wpnonce' => wp_create_nonce('packager-switch'),
-                );
-                if (WYSIJA::is_beta())
-                    $args["stable"] = 1;
-
-                $link = esc_attr(add_query_arg($args, admin_url('admin.php')));
-
-                //send a message to the user so that he gets the premium plugin or try to fetch it directly.
-                $this->notice('<p>'.__('Congrats, your Premium license is active. One last step...', WYSIJA).' <a data-warn="' . esc_attr__( "Confirm installing the MailPoet Premium Plugin?", WYSIJA ) . '" id="install-wjp" class="button-primary" title="' . esc_attr__( "Installing MailPoet Premium Version", WYSIJA ) . '" href="' . esc_url($link) . '">'.__('Download the Premium plugin.',WYSIJA).'</a></p>');
-            }
-        }
-
-        return null;
     }
 
     function comment_approved($cid,$comment_status){
