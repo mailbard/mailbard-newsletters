@@ -171,7 +171,7 @@ class WYSIJA_help_backloader extends WYSIJA_help{
 						break;
 
 					case 'wysija-admin-ajax':
-						if ( $plugin != 'wysija-newsletters' ){
+						if ( $plugin != 'wysija-newsletters' && $plugin !== 'legacy' ){
 							$ajaxvarname = $plugin;
 						} else {
 							$ajaxvarname = 'wysija';

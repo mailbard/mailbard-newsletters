@@ -125,10 +125,6 @@ class WYSIJA_help_mailer extends PHPMailer {
 					$this->Mailer = 'sparkpost';
 					$this->sparkpost = new WJ_Sparkpost( $this->config->getValue('smtp_password') );
 				}else{
-				if(in_array(trim($this->Host), array('mailpoet.com'))){
-				  $this->Mailer = 'mailpoet';
-				  $this->mailpoet = new WJ_Bridge( $this->config->getValue('smtp_password') );
-				}else{
 				  $this->IsSMTP();
 				  if(strpos($this->Host, 'mailjet.com')!==false){
 					$this->isMailjet=true;
@@ -142,7 +138,6 @@ class WYSIJA_help_mailer extends PHPMailer {
 				  $this->SMTPSecure = trim((string)$this->config->getValue('smtp_secure'));
 				  if(empty($this->Sender)) $this->Sender = strpos($this->Username,'@') ? $this->Username : $this->config->getValue('from_email');
 				}
-			  }
 			  break;
 			case 'site':
 				switch($this->config->getValue('sending_emails_site_method')){
@@ -1175,10 +1170,6 @@ class WYSIJA_help_mailer extends PHPMailer {
       case 'sparkpost' :
         $result = $this->sparkpost->send_mail($this);
         if ( $result !== true ) $this->core->error($this->sparkpost->error);
-        break;
-      case 'mailpoet' :
-        $result = $this->mailpoet->send_mail($this);
-        if ( $result !== true ) $this->core->error($this->mailpoet->error);
         break;
       case 'wpmail' :
         $to = array_filter($this->to[0]);

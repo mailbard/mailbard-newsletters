@@ -602,40 +602,10 @@ class WYSIJA_control_back_campaigns extends WYSIJA_control{
 
 	function install_theme() {
 		$this->requireSecurity();
-                if( isset($_REQUEST['theme_id'])){
-			global $wp_version;
-			//check if theme is premium if you have the premium licence
-			if(isset($_REQUEST['premium']) && $_REQUEST['premium']){
-				$getpremiumtheme=apply_filters('wysija_install_theme_premium', false);
-
-				if(!$getpremiumtheme){
-					$helper_wj_engine = WYSIJA::get('wj_engine', 'helper');
-					$themes = $helper_wj_engine->renderThemes();
-					return array('result'=>false, 'themes' => $themes);
-				}
-			}
-
-			$helperToolbox = WYSIJA::get('toolbox','helper');
-			$domain_name = $helperToolbox->_make_domain_name(admin_url('admin.php'));
-
-			$request = 'http://api.mailpoet.com/download/zip/'.$_REQUEST['theme_id'].'?domain='.$domain_name;
-
-			$args = array(
-					'timeout' =>  30,
-					'body' => array(  ),
-		 'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
-			);
-			$raw_response = wp_remote_post( $request, $args );
-
-			if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) ){
-				if(method_exists($raw_response, 'get_error_messages')){
-					$this->error($raw_response->get_error_messages());
-				}
-				$ZipfileResult = false;
-			}else{
-				$ZipfileResult = maybe_unserialize( wp_remote_retrieve_body( $raw_response ) );
-			}
-
+        if( isset($_REQUEST['theme_id'])){
+			
+			$ZipfileResult = false;
+			
 			if($ZipfileResult === false){
 				$result = false;
 				$this->error(__('We were unable to contact the API, the site may be down. Please try again later.',WYSIJA),true);
