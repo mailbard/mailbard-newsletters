@@ -8,7 +8,7 @@ Send newsletters post notifications or autoresponders from WordPress easily, and
 
 == Description ==
 
-MailBard is a fork of the plugin MailPoet 2.  The MailPoet team has decided to stop support MailPoet 2; MailBard will pick up where MailPoet 2 left off.  We are striving for 100% backwards-compatibility with MailPoet 2.
+MailBard is a fork of the plugin MailPoet 2.  The MailPoet team has decided to stop supporting MailPoet 2... so here comes MailBard, to pick up right where MailPoet 2 left off!  We are striving for 100% backwards-compatibility with MailPoet 2.
 
 With MailBard, you can create newsletters, post notifications and autoresponders. Drop your posts, images, social icons in your newsletter. Change fonts and colors on the fly. Manage all your subscribers. A new and simple newsletter solution for WordPress. Finally!
 
