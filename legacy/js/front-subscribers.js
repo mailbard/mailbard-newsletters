@@ -14,7 +14,7 @@ function version_compare(t,i){if(t===i)return 0;for(var a=t.split("."),n=i.split
 			var nonceField = $(form).find('input[name="mailbard_nonce"]');
 			if ( ! $(nonceField).val() > '' ) {
 				$.ajax({
-					url: ajaxurl,
+					url: wysijaAJAX.ajaxurl,
 					data: {
 						'action': 'mailbard-get-nonce',
 					},
