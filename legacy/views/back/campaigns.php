@@ -2677,7 +2677,9 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 
 										?>
 								<div class="changelog <?php echo $class_added ?>">
+									<?php if ( isset( $section['title'] ) ): ?>
 									<h2><?php echo $section['title'] . $link_hide ?></h2>
+									<?php endif; ?>
 
 									<div class="feature-sec tion <?php echo $section['format'] ?>">
 										<?php

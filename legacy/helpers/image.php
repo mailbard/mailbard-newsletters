@@ -26,7 +26,7 @@ class WYSIJA_help_image extends WYSIJA_help_file{
             $i=1;
             foreach($files as $file_name){
                 if(!in_array($file_name, array('.','..','.DS_Store','Thumbs.db'))){
-                    if(preg_match('/.*\.('.implode($images_types_allowed,'|').')/',$file_name,$match)){
+                    if(preg_match('/.*\.('.implode( '|', $images_types_allowed ).')/',$file_name,$match)){
                         $image_template = array(
                            'path'=> $path.$file_name,
                            'width'=> 0,

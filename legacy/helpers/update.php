@@ -42,7 +42,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$installHelper->moveData('themes');
 
 				if($errors){
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -64,7 +64,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 
 				if($errors){
 					$model_config->save(array('update_error_20'=>true));
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -136,7 +136,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 					$errors=$this->runUpdateQueries($querys);
 					if($errors){
 						$model_config->save(array('update_error_21'=>true));
-						$this->error(implode($errors,"\n"));
+						$this->error( implode( "\n", $errors ) );
 						return false;
 					}
 				}
@@ -147,7 +147,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors=$this->runUpdateQueries($querys);
 
 				if($errors){
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -157,7 +157,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors=$this->runUpdateQueries($querys);
 
 				if($errors){
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -169,7 +169,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors=$this->runUpdateQueries($querys);
 
 				if($errors){
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -186,7 +186,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors=$this->runUpdateQueries($querys);
 
 				if($errors){
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 
@@ -214,7 +214,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors=$this->runUpdateQueries($querys);
 
 				if($errors){
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -234,7 +234,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors = $this->runUpdateQueries($queries);
 
 				if($errors) {
-					$this->error(implode($errors,"\n"));
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				} else {
 					// the table should be created now. let's make sure:
@@ -371,7 +371,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors    = $this->runUpdateQueries( $queries );
 
 				if ( $errors ) {
-					$this->error( implode( $errors, "\n" ) );
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				return true;
@@ -403,13 +403,13 @@ class WYSIJA_help_update extends WYSIJA_object {
 					$queries[] = "UPDATE [wysija]user SET `domain` = SUBSTRING(`email`,LOCATE('@',`email`)+1);";
 					$errors    = $this->run_update_queries( $queries );
 					if ( $errors ) {
-						$this->error( implode( $errors, "\n" ) );
+						$this->error( implode( "\n", $errors ) );
 						return false;
 					}
 
 				} else {
 									if(!empty($errors)){
-										$this->error( implode( $errors, "\n" ) );
+										$this->error( implode( "\n", $errors ) );
 									}
 									return false;
 				}
@@ -448,7 +448,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors = $this->runUpdateQueries( $queries );
 
 				if ( $errors ) {
-					$this->error( implode( $errors, "\n" ) );
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 				// update the new page_selection options with the default MailPoet's page
@@ -473,7 +473,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors    = $this->run_update_queries( $queries );
 
 				if ( $errors ) {
-					$this->error( implode( $errors, "\n" ) );
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 
@@ -492,7 +492,7 @@ class WYSIJA_help_update extends WYSIJA_object {
                                 $errors = $this->run_update_queries( $queries );
 
                                 if( !empty($errors) ){
-                                    $this->error( implode( $errors, "\n" ) );
+                                    $this->error( implode( "\n", $errors ) );
                                 }
                             }
                             return true;
@@ -512,7 +512,7 @@ class WYSIJA_help_update extends WYSIJA_object {
 				$errors = $this->run_update_queries( $queries );
 
 				if ( $errors ) {
-					$this->error( implode( $errors, "\n" ) );
+					$this->error( implode( "\n", $errors ) );
 					return false;
 				}
 

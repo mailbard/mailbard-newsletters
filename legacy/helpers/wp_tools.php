@@ -194,7 +194,7 @@ class WYSIJA_help_wp_tools extends WYSIJA_object{
 		if($simple){
 			$url=site_url();
 			// make sure we have a trailing slash at the end
-			if($url{strlen($url) - 1} !== '/') $url .= '/';
+			if ( $url[ strlen( $url ) - 1 ] !== '/' ) { $url .= '/'; }
 		}
 
 		if(isset($paramsquery['query'])){

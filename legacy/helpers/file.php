@@ -158,7 +158,7 @@ class WYSIJA_help_file extends WYSIJA_object{
             $files = scandir($path);
             foreach($files as $filename){
                 if(!in_array($filename, array('.','..',".DS_Store","Thumbs.db"))){
-                    if(preg_match('/('.implode($filename_removal,'|').')[a-f0-9]*\.(csv|txt)/',$filename,$match)){
+                    if(preg_match('/('.implode( '|', $filename_removal ).')[a-f0-9]*\.(csv|txt)/',$filename,$match)){
                        $deleted[]=$path.$filename;
                     }
                 }
