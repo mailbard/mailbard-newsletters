@@ -2,8 +2,8 @@
 Contributors: mailbard
 Tags: newsletter, email, welcome email, post notification, autoresponder, signup, subscription, SMTP
 Requires at least: 3.5
-Tested up to: 5.2
-Stable tag: 0.1.4
+Tested up to: 5.6
+Stable tag: 0.2.0
 Send newsletters post notifications or autoresponders from WordPress easily, and beautifully. Start to capture subscribers with our widget now.
 
 == Description ==
@@ -34,6 +34,9 @@ More details will be added soon.  To contribute or ask questions, please visit u
 * MailBard has removed the 2000 subscribers limitation of MailPoet... send to as many subscribers as you want!
 
 == Changelog ==
+
+= 0.2.0 - 2021-02-04 =
+* NEW: PHP 7.4+ support, WordPress 5.5+ compatibility
 
 = 0.1.4 - 2019-11-02 =
 * FIX: undefined ajaxurl on frontend
