@@ -2781,10 +2781,10 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
 				$is_network_admin = WYSIJA::current_user_can('manage_network');
 
         $data['sections'][] = array(
-          'title' => __("Try the new version 3 today.", WYSIJA),
-          'format' => 'title-content',
-          'content' => 'Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  But, don\'t worry, MailBard will continue right where MailPoet 2 left off!
-		  <br /><br />For further information on this project, visit <a href="http://mailbard.com/">mailbard.com</a>.'
+			'title'   => '',
+			'format'  => 'title-content',
+			'content' => 'Welcome to MailBard.  MailBard is a fork of MailPoet 2, which the MailPoet team has decided to stop supporting.  But, don\'t worry, MailBard will continue right where MailPoet 2 left off!
+				<br /><br />For further information on this project, visit <a href="http://mailbard.com/">mailbard.com</a>.'
         );
 
 				if ($is_multisite) {
@@ -2973,7 +2973,7 @@ class WYSIJA_view_back_campaigns extends WYSIJA_view_back {
                 }
 		?>
 
-					<a class="<?php echo $link_class ?>" href="admin.php?page=wysija_campaigns"><?php _e('Thanks! Now take me to MailPoet.', WYSIJA); ?></a>
+					<a class="<?php echo $link_class ?>" href="admin.php?page=wysija_campaigns"><?php _e( 'Thanks! Now take me to MailBard.', 'mailbard' ); ?></a>
 
 				</div>
 
